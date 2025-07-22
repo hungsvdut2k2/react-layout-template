@@ -14,4 +14,7 @@ IMAGE_NAME="my-react-app-image"  # TODO: Replace with your actual image name
 # --rm removes the container when it exits, --name gives it a unique name
 CONTAINER_NAME="react_app_${HOST_PORT}"
 
+# Build the Docker image before running
+docker build -t my-react-app-image:latest .
+
 docker run -d --rm --name $CONTAINER_NAME -p ${HOST_PORT}:3000 $IMAGE_NAME 
